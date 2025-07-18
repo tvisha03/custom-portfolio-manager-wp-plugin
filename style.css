@@ -1,0 +1,600 @@
+/*Plugin Name: Portfolio Manager
+Description: Styles for the Custom Portfolio Manager plugin.
+*/
+
+/* --- Admin Styles (already existing, usually fine as is) --- */
+.wrap h1,
+.wrap h2 {
+    color: #23282d; /* WordPress admin default text color */
+}
+
+.form-table th {
+    width: 150px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.form-table td {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.regular-text,
+.large-text {
+    max-width: 100%;
+}
+
+.wp-list-table th,
+.wp-list-table td {
+    padding: 10px 8px;
+    vertical-align: middle;
+}
+
+.notice-success, .notice-error {
+    margin-top: 20px;
+}
+
+/* --- Frontend Styles (Enhanced) --- */
+
+.pm-portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px; /* Slightly more space for better visual separation */
+    margin-top: 40px; /* More margin from page title */
+    list-style: none;
+    padding: 0;
+    max-width: 1200px; /* Max width for larger screens */
+    margin-left: auto;
+    margin-right: auto; /* Center the grid */
+}
+
+.pm-portfolio-item {
+    border: 1px solid #ddd; /* Lighter border */
+    border-radius: 10px; /* Slightly more rounded corners */
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+}
+
+.pm-portfolio-item:hover {
+    transform: translateY(-8px); /* Lift card more on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+.pm-portfolio-image {
+    width: 100%;
+    height: 220px; /* Slightly taller images */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f8f8; /* A very light background */
+}
+
+.pm-portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.pm-portfolio-content {
+    padding: 20px 25px; /* More padding */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.pm-portfolio-content h3 {
+    margin-top: 0;
+    margin-bottom: 12px; /* Adjusted margin */
+    font-size: 1.6em; /* Slightly larger title */
+    color: #333;
+    font-weight: 600; /* Bolder title */
+    line-height: 1.3;
+}
+
+.pm-portfolio-description {
+    font-size: 1em; /* Slightly larger description text */
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 15px; /* Space before technologies */
+    flex-grow: 1;
+}
+
+.pm-portfolio-tech {
+    font-size: 0.9em; /* Slightly larger tech text */
+    color: #777;
+    margin-top: 10px; /* Less margin from description if it's the last element */
+    font-style: normal; /* Remove italic for a cleaner look */
+    font-weight: 500;
+}
+
+.pm-project-links {
+    margin-top: 20px; /* Space above buttons */
+    display: flex; /* Arrange buttons side-by-side */
+    gap: 10px; /* Space between buttons */
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+}
+
+.pm-button {
+    display: inline-block;
+    padding: 10px 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 0.9em;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: 1px solid transparent; /* Default transparent border */
+}
+
+.pm-button-live {
+    background-color: #0073aa; /* WordPress blue */
+    color: #fff;
+}
+
+.pm-button-live:hover {
+    background-color: #005f8a; /* Darker blue on hover */
+    color: #fff; /* Keep text white on hover */
+}
+
+.pm-button-github {
+    background-color: #333; /* Dark gray for GitHub */
+    color: #fff;
+}
+
+.pm-button-github:hover {
+    background-color: #000; /* Black on hover */
+    color: #fff; /* Keep text white on hover */
+}
+
+/* --- Basic Responsiveness (Adjusted) --- */
+
+@media (max-width: 992px) {
+    .pm-portfolio-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 25px;
+    }
+    .pm-portfolio-item {
+        border-radius: 8px;
+    }
+    .pm-portfolio-image {
+        height: 190px;
+    }
+    .pm-portfolio-content {
+        padding: 15px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .pm-portfolio-grid {
+        grid-template-columns: 1fr; /* Stack vertically on smaller tablets/phones */
+        gap: 20px;
+        margin-top: 25px;
+    }
+    .pm-portfolio-image {
+        height: 200px; /* Slightly taller for single column */
+    }
+    .pm-portfolio-content {
+        padding: 15px;
+    }
+    .pm-portfolio-content h3 {
+        font-size: 1.5em;
+    }
+    .pm-portfolio-description {
+        font-size: 0.95em;
+    }
+    .pm-button {
+        padding: 8px 15px;
+        font-size: 0.85em;
+    }
+}
+
+@media (max-width: 480px) {
+    .pm-portfolio-item {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .pm-portfolio-image {
+        height: 180px;
+    }
+    .pm-portfolio-content {
+        padding: 10px 15px;
+    }
+    .pm-portfolio-content h3 {
+        font-size: 1.3em;
+    }
+    .pm-portfolio-description,
+    .pm-portfolio-tech {
+        font-size: 0.9em;
+    }
+    .pm-project-links {
+        flex-direction: column; /* Stack buttons on very small screens */
+    }
+    .pm-button {
+        width: 100%; /* Full width buttons when stacked */
+    }
+}
+
+/* --- Styles for Dark Mode Toggle Button --- */
+.pm-button-toggle {
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+.pm-button-toggle:hover {
+    background-color: #e0e0e0;
+    color: #000;
+}
+
+/* --- Dark Mode Styles --- */
+body.pm-dark-mode {
+    background-color: #282c34; /* Dark background */
+    color: #f1f1f1; /* Light text */
+}
+
+body.pm-dark-mode .site-header, /* Target header elements of your theme */
+body.pm-dark-mode .site-footer { /* Target footer elements of your theme */
+    background-color: #21252b; /* Darker header/footer */
+    color: #f1f1f1;
+}
+
+body.pm-dark-mode .site-title a, /* Example for site title link */
+body.pm-dark-mode .main-navigation a { /* Example for menu links */
+    color: #f1f1f1;
+}
+
+body.pm-dark-mode .pm-portfolio-item {
+    background-color: #3a3f4a; /* Dark card background */
+    border-color: #444; /* Darker border */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Darker shadow */
+}
+
+body.pm-dark-mode .pm-portfolio-content h3 {
+    color: #e0e0e0; /* Lighter title text */
+}
+
+body.pm-dark-mode .pm-portfolio-description,
+body.pm-dark-mode .pm-portfolio-tech,
+body.pm-dark-mode .pm-portfolio-tech-chips strong {
+    color: #c0c0c0; /* Lighter body text */
+}
+
+/* --- New Styles for Technology Tags as Chips --- */
+.pm-portfolio-tech-chips {
+    margin-top: 15px; /* Space above the chips */
+    font-size: 0.9em;
+    color: #777;
+    font-weight: 500;
+}
+
+.pm-portfolio-tech-chips strong {
+    display: block; /* Puts "Technologies:" on its own line */
+    margin-bottom: 5px;
+    color: #333; /* Darker color for the bold label */
+}
+
+/* THIS IS THE MISSING RULE - ADD IT HERE */
+.pm-tag-chip {
+    display: inline-block; /* Allows side-by-side display */
+    background-color: #e6e6e6; /* Light gray background */
+    color: #555;
+    padding: 5px 10px;
+    border-radius: 20px; /* Pill shape */
+    margin-right: 8px; /* Space between chips */
+    margin-bottom: 8px; /* Space between rows of chips */
+    font-size: 0.8em; /* Slightly smaller text for tags */
+    font-weight: 600;
+    text-transform: uppercase; /* Optional: Make tags uppercase */
+    white-space: nowrap; /* Prevent chips from breaking words */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08); /* Subtle shadow for depth */
+}
+
+/* The rest of your style.css code follows after this. */
+
+body.pm-dark-mode .pm-tag-chip {
+    background-color: #555; /* Darker chip background */
+    color: #e0e0e0; /* Lighter chip text */
+}
+
+/* Adjust button colors for dark mode */
+body.pm-dark-mode .pm-button-live {
+    background-color: #0099e0; /* Brighter blue for contrast */
+    color: #fff;
+}
+body.pm-dark-mode .pm-button-live:hover {
+    background-color: #007bc4;
+}
+
+body.pm-dark-mode .pm-button-github {
+    background-color: #555; /* Slightly lighter dark gray */
+    color: #fff;
+}
+body.pm-dark-mode .pm-button-github:hover {
+    background-color: #444;
+}
+/* --- Styles for Dark Mode Toggle Button Position & Icon --- */
+.pm-portfolio-container {
+    position: relative; /* Establish positioning context for absolute button */
+    margin-top: 40px; /* Adjust as needed for spacing from header */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px; /* Add some padding to container */
+}
+
+#pm-dark-mode-toggle {
+    position: absolute; /* Position relative to .pm-portfolio-container */
+    top: -50px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed to align with padding */
+    z-index: 10; /* Ensure it's above other content */
+    background: none; /* Remove button background */
+    border: none; /* Remove button border */
+    color: #333; /* Default icon color */
+    cursor: pointer;
+    font-size: 1.8em; /* Size of the icon */
+    padding: 5px; /* Padding for click area */
+    transition: color 0.3s ease;
+}
+
+#pm-dark-mode-toggle:hover {
+    color: #0073aa; /* Hover color */
+}
+
+/* Hide one icon based on mode */
+.pm-icon-dark {
+    display: none; /* Hidden by default in light mode */
+}
+
+body.pm-dark-mode .pm-icon-dark {
+    display: inline-block; /* Show moon icon in dark mode */
+    color: #f1f1f1; /* Icon color in dark mode */
+}
+
+body.pm-dark-mode .pm-icon-light {
+    display: none; /* Hide sun icon in dark mode */
+}
+
+body.pm-dark-mode #pm-dark-mode-toggle:hover {
+    color: #0099e0; /* Dark mode hover color */
+}
+
+/* --- Centering the Main Page Title (e.g., "My Portfolio") --- */
+/* Target the main h1 of the content area. This might need adjustment based on your theme. */
+/* Common selectors for page titles: */
+.wp-block-post-title, /* For Block Editor post titles */
+.entry-title,         /* Common for classic themes */
+.page-title {         /* Common for page titles */
+    text-align: center;
+    margin-bottom: 40px; /* Add space below title */
+    font-size: 3em; /* Make it more prominent */
+    color: #333;
+}
+
+/* Dark mode adjustment for title */
+body.pm-dark-mode .wp-block-post-title,
+body.pm-dark-mode .entry-title,
+body.pm-dark-mode .page-title {
+    color: #f1f1f1;
+}
+
+/* Adjust pm-portfolio-grid margin-top as it's now inside pm-portfolio-container */
+.pm-portfolio-grid {
+    margin-top: 0; /* Remove top margin as container now handles it */
+    padding-top: 20px; /* Add padding from toggle */
+}
+
+/* --- Responsiveness for Toggle Button --- */
+@media (max-width: 768px) {
+    #pm-dark-mode-toggle {
+        top: 10px; /* Adjust top position for smaller screens */
+        right: 15px;
+        font-size: 1.5em; /* Smaller icon */
+    }
+    .pm-portfolio-container {
+         padding: 0 15px; /* Adjust container padding */
+    }
+    .wp-block-post-title,
+    .entry-title,
+    .page-title {
+        font-size: 2.2em; /* Smaller title on mobile */
+        margin-bottom: 25px;
+    }
+}
+
+/* --- NEW: Modal Styles --- */
+.pm-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+    padding-top: 60px; /* Place content a bit down from the top */
+}
+
+.pm-modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 5% from the top and centered */
+    padding: 30px;
+    border: 1px solid #888;
+    width: 80%; /* Could be responsive */
+    max-width: 800px; /* Max width for larger screens */
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    animation: animatemodal 0.4s; /* Simple animation */
+}
+
+.pm-modal-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.pm-modal-close:hover,
+.pm-modal-close:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.pm-modal-content h2 {
+    margin-top: 0;
+    font-size: 2em;
+    color: #333;
+}
+
+.pm-modal-image-container {
+    max-height: 400px; /* Limit image height */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.pm-modal-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.pm-modal-content p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.pm-modal-links {
+    margin-top: 25px;
+    text-align: right;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+/* Animation for modal */
+@keyframes animatemodal {
+    from {top: -300px; opacity: 0;}
+    to {top: 5%; opacity: 1;}
+}
+
+/* --- Dark Mode for Modal --- */
+body.pm-dark-mode .pm-modal-content {
+    background-color: #3a3f4a;
+    border-color: #444;
+    color: #f1f1f1;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+body.pm-dark-mode .pm-modal-close {
+    color: #ccc;
+}
+body.pm-dark-mode .pm-modal-close:hover,
+body.pm-dark-mode .pm-modal-close:focus {
+    color: #f1f1f1;
+}
+
+body.pm-dark-mode .pm-modal-content h2 {
+    color: #e0e0e0;
+}
+
+body.pm-dark-mode .pm-modal-content p {
+    color: #c0c0c0;
+}
+
+body.pm-dark-mode .pm-modal-links {
+    border-top-color: #444;
+}
+
+/* Responsive adjustments for modal */
+@media (max-width: 768px) {
+    .pm-modal-content {
+        width: 95%;
+        margin: 20px auto;
+        padding: 20px;
+    }
+    .pm-modal-image-container {
+        max-height: 250px;
+    }
+    .pm-modal-content h2 {
+        font-size: 1.5em;
+    }
+    .pm-modal-content p {
+        font-size: 0.95em;
+    }
+}
+
+/* --- NEW: Sorting Controls Styles --- */
+.pm-sort-controls {
+    margin-bottom: 20px;
+    text-align: right; /* Align sort dropdown to the right */
+    display: flex;
+    justify-content: flex-end; /* Push to the right */
+    align-items: center;
+    gap: 10px;
+    position: relative; /* For z-index if toggle is near */
+    z-index: 5; /* Ensure it's below the toggle button */
+    padding-right: 20px; /* Match container padding */
+}
+
+.pm-sort-controls label {
+    font-weight: 600;
+    color: #555;
+    font-size: 0.95em;
+}
+
+.pm-sort-controls select {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 0.9em;
+    cursor: pointer;
+    outline: none;
+    appearance: none; /* Remove default arrow in some browsers */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000%22%20d%3D%22M287%2C197.97%20c5.3%2C5.3%205.3%2C13.8%200%2C19.1%20L154.7%2C344.27%20c-5.3%2C5.3-13.8%2C5.3-19.1%2C0%20L0%2C217.07%20c-5.3-5.3-5.3-13.8%200-19.1%20L135.6%2C62.47%20c5.3-5.3%2013.8-5.3%2019.1%2C0%20L287%2C197.97%20z%22%2F%3E%3C%2Fsvg%3E'); /* Custom arrow for select */
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 12px auto;
+    padding-right: 25px; /* Space for custom arrow */
+}
+
+body.pm-dark-mode .pm-sort-controls label {
+    color: #c0c0c0;
+}
+body.pm-dark-mode .pm-sort-controls select {
+    background-color: #444;
+    border-color: #555;
+    color: #f1f1f1;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23f1f1f1%22%20d%3D%22M287%2C197.97%20c5.3%2C5.3%205.3%2C13.8%200%2C19.1%20L154.7%2C344.27%20c-5.3%2C5.3-13.8%2C5.3-19.1%2C0%20L0%2C217.07%20c-5.3-5.3-5.3-13.8%200-19.1%20L135.6%2C62.47%20c5.3-5.3%2013.8-5.3%2019.1%2C0%20L287%2C197.97%20z%22%2F%3E%3C%2Fsvg%3E'); /* Light arrow for dark mode */
+}
+
+/* Adjust pm-portfolio-container padding to accommodate new controls */
+.pm-portfolio-container {
+    padding-top: 60px; /* Increased padding-top to give space above the grid */
+}
+
+@media (max-width: 768px) {
+    .pm-sort-controls {
+        text-align: left;
+        justify-content: flex-start;
+        padding-left: 15px; /* Adjust for mobile padding */
+        padding-right: 0;
+    }
+}
