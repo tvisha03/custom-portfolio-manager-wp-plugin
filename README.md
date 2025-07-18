@@ -93,7 +93,6 @@ The **Custom Portfolio Manager** is a lightweight yet powerful WordPress plugin 
 * Add a modal popup for detailed project views on the frontend.
 * Introduce sorting (e.g., by date, alphabetically) and filtering (by technology tags) options for the frontend portfolio.
 * Enable users to upload images directly from the WordPress media library instead of providing URLs.
-* Add a "Project Status" field (Draft, Published, Archived) for more robust content management.
 * Explore WordPress REST API integration to serve project data for headless applications.
 
 ---
