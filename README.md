@@ -1,6 +1,6 @@
 # Custom Portfolio Manager WordPress Plugin
 
-![Frontend Screenshot](path/to/your/frontend-screenshot.jpg) *(Optional: Add a second screenshot of the admin panel)*
+![Frontend Screenshot](assets/frontend.png) 
 
 ## Project Overview
 
@@ -73,9 +73,15 @@ The **Custom Portfolio Manager** is a lightweight yet powerful WordPress plugin 
 
 ## Screenshots / Demo
 
-* [Link to your frontend screenshot]
-* [Link to your admin screenshot]
-* *(Optional but highly recommended):* [Link to a short video demo (e.g., on YouTube) demonstrating adding a project, editing it, deleting it, and showing the frontend display and dark mode toggle.]
+### Frontend Display (Light Mode)
+![Frontend Portfolio Light Mode](assets/frontend.png)
+
+### Frontend Display (Dark Mode)
+![Frontend Portfolio Dark Mode](assets/frontend-dark.png)
+
+### Admin Panel
+![Admin Panel Screenshot](assets/dashboard.png)
+
 
 ## What I Learned & Challenges Faced
 
@@ -93,7 +99,6 @@ The **Custom Portfolio Manager** is a lightweight yet powerful WordPress plugin 
 * Add a modal popup for detailed project views on the frontend.
 * Introduce sorting (e.g., by date, alphabetically) and filtering (by technology tags) options for the frontend portfolio.
 * Enable users to upload images directly from the WordPress media library instead of providing URLs.
-* Add a "Project Status" field (Draft, Published, Archived) for more robust content management.
 * Explore WordPress REST API integration to serve project data for headless applications.
 
 ---
